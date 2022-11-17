@@ -1,0 +1,15 @@
+table{
+    width: 100%;
+}
+
+table th{    
+    border: 1px solid #000;
+    font-size: 1rem;
+    color: aliceblue;
+    text-align: center;
+    background-color: rgb(121, 120, 120);
+}
+tr:nth-child(odd){
+    background-color: rgb(212, 212, 212);
+
+}
