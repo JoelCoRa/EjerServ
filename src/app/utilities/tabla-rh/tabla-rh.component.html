@@ -1,0 +1,80 @@
+
+
+<table>
+  <tr>
+    <th *ngFor="let item of campo">{{item}}</th>
+  </tr>
+
+    <tr *ngFor="let elem of recursoHumano">
+      <td>{{elem.id}}</td>
+      <td>{{elem.nombres}}</td>
+      <td>{{elem.primApe}}</td>
+      <td>{{elem.segunApe}}</td>
+      <td>{{elem.curp}}</td>
+      <td>{{elem.puesto}}</td>
+      <td>{{elem.depto}}</td>
+      <td>{{elem.estado}}</td>
+      <td>
+        <img class="logoAccion" src="{{urlEditar}}" alt="editar" routerLink="./modificar">
+        <app-eliminar-rh [ngClass]="'logoAccion'"></app-eliminar-rh>
+        <img class="logoAccion" src="{{urlConsultar}}" alt="consultar" routerLink="./consultar"> 
+      </td>     
+    </tr>  
+</table>
+
+
+<!-- <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="personajes">    
+
+    <ng-container matColumnDef="nombres" >
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="primApe" >
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segunApe" >
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="curp" >
+      <th mat-header-cell *matHeaderCellDef> Species </th>
+      <td mat-cell *matCellDef="let element"> {{element.species}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="puesto" >
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="depto" >
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado" >
+      <th mat-header-cell *matHeaderCellDef> Origin </th>
+      <td mat-cell *matCellDef="let element"> {{element.origin.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones" >
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element"> 
+        <img class="logoAccion" src="{{urlEditar}}" alt="editar">
+        <img class="logoAccion" src="{{urlConsultar}}" alt="consultar" routerLink="./consultar"> 
+      </td>
+    </ng-container>    
+
+    <tr mat-header-row *matHeaderRowDef="campo"></tr>
+    <tr mat-row *matRowDef="let row; columns: campo;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div> -->

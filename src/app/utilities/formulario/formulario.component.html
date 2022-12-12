@@ -1,0 +1,47 @@
+<form class="form">
+    <legend class="titulo-form">
+        <h4>Búsqueda de Recursos Humanos</h4>
+    </legend>
+    <div class="form__container">
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="name" value="">
+            <label class="form__label" for="name" ><span class="txt"> Nombre </span></label>
+        </div>
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="prim-apellido">
+            <label class="form__label" for="prim-apellido"><span class="txt"> Primer Apellido </span></label>
+        </div>
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="segun-apellido">
+            <label class="form__label" for="segun-apellido"><span class="txt"> Segundo Apellido </span></label>   
+        </div>  
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="curp" value="">
+            <label class="form__label" for="curp"><span class="txt"> CURP </span></label>   
+        </div>   
+        <div class="campo">
+            <select class="form__input" type="text" placeholder=" " id="puesto">
+                <option value="puesto" disabled selected>Puesto</option>
+                <option *ngFor="let puesto of puestos" value="">{{ puesto }}</option>
+            </select> 
+        </div>
+        <div class="campo">
+            <select class="form__input" type="text" placeholder=" " id="departamento" value="">
+                <option value="departamento" disabled selected>Departamento</option>
+                <option *ngFor="let depto of deptos" value="">{{ depto }}</option>
+            </select> 
+        </div>   
+        <div class="campo {{!visible ? 'visible' : ''}}">
+            <select class="form__input" type="text" placeholder=" " id="estado" value="">
+                <option value="estado" disabled selected>Estado</option>
+                <option *ngFor="let edo of estados" value="">{{ edo }}</option>
+            </select> 
+        </div>      
+        
+         
+    </div>
+    <div class="{{!buscar ? 'visible': ''}}">
+        <app-boton >Buscar</app-boton> 
+    </div>        
+</form>
+

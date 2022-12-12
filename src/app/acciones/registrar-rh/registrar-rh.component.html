@@ -1,0 +1,79 @@
+
+<app-titulo>Registrar Recurso Humano</app-titulo>
+<img src="{{urlImage}}" alt="" class="icono">
+
+
+
+
+
+
+<form class="form">
+    <legend class="titulo-form">
+        <h4>Registro de Recursos Humanos</h4>
+    </legend>
+    <div class="form__container">
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="name" value=""  name="nmbres" 
+            [(ngModel)]="modelRH.nombres">
+            <label class="form__label" for="name" ><span class="txt">Nombre</span></label>
+        </div>
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="prim-apellido" name="primApe"
+            [(ngModel)]="modelRH.primApe">
+            <label class="form__label" for="prim-apellido"><span class="txt"> Primer Apellido </span></label>
+        </div>
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="segun-apellido" name="segunApe"
+            [(ngModel)]="modelRH.segunApe">
+            <label class="form__label" for="segun-apellido"><span class="txt"> Segundo Apellido </span></label>   
+        </div> 
+        <div class="campo">
+            <input class="form__input" type="text" placeholder=" " id="curp" value="" name="curp"
+            [(ngModel)]="modelRH.curp">
+            <label class="form__label" for="curp"><span class="txt"> CURP </span></label>   
+        </div>   
+        <div class="campo">         
+            <label class="form__label" for="puesto"><span class="txt-select"> Puesto </span></label>   
+            <select class="form__input"  name="puesto" id="puesto" [(ngModel)]="modelRH.puesto">
+                <option value="puesto" disabled selected>--Selecciona--</option>
+                <option *ngFor="let puesto of puestos" >{{ puesto.name }}</option>
+            </select> 
+        </div> 
+        <div class="campo"> 
+            <label class="form__label" for="depto"><span class="txt-select"> Departamento </span></label>           
+            <select class="form__input" type="text" placeholder=" " name="depto" id="depto" [(ngModel)]="
+            modelRH.depto">
+                <option value="departamento" disabled selected>--Selecciona--</option>
+                <option *ngFor="let depto of deptos" >{{ depto.name }}</option>
+            </select> 
+            
+        </div>                  
+        <div class="campo estado">
+            <h3>Estado: </h3>
+                <div class="opcion">
+                    <input type="radio" id="activo" name="estado" value="activo" checked [(ngModel)]="
+                    modelRH.estado">
+                    <label for="activo">Activo</label>
+                </div>
+
+                <div class="opcion">
+                    <input type="radio" id="inactivo" name="estado" value="inactivo" [(ngModel)]="
+                    modelRH.estado"   >
+                    <label for="inactivo">Inactivo</label>
+                </div>
+
+                <div class="opcion">
+                    <input type="radio" id="suspendido" name="estado" value="suspendido"  [(ngModel)]="
+                    modelRH.estado"  >
+                    <label for="suspendido">Suspendido</label>
+                </div>     
+        </div> 
+              
+    </div>
+      
+</form>
+<div class="botonesRegistrar">   
+    <button class="btn btn-success" (click)="Guardar(modelRH)" routerLink="">Aceptar</button> 
+    <button class="btn btn-danger" routerLink="">Cancelar</button> 
+
+</div>

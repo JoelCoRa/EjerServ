@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EliminarRhComponent } from './acciones/eliminar-rh/eliminar-rh.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ export class AppComponent {
   puestos: string[] = ['Analista de Sistemas','Desarrollador BackEnd', 'Desarrollador FrontEnd']
   estados: string[] = ['Activo','Inactivo','Despedido']
 
-
   
+  
+  
+ 
   title = 'listar-rh';
 }

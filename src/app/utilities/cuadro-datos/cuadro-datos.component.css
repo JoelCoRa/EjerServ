@@ -1,0 +1,37 @@
+
+
+
+.cuadro{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+h3,h4{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+h4{
+    font-size: 1rem;
+}
+
+
+.titulo-cuadro{
+    text-align: start;
+    padding-left: 10px ;
+    border: 1px solid #000;
+    background-color: gray;
+}
+.cuerpo-cuadro{
+    text-align: left;
+    display: grid;
+    margin: 2rem auto;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+    width: 80%;
+}
+.value{
+    font-weight: 100;
+    text-shadow: 0 0.5px 0 black;
+}
