@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AfterViewInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { RecursoHumano } from 'src/app/model/rh';
-import { PruebaService } from 'src/app/services/prueba/prueba.service';
 import { RechumanoService } from 'src/app/services/rechumano/rechumano.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { InMemoryDataService } from 'src/app/in-memory-data.service';
+import { PaginatePipe } from 'src/app/pipes/paginate.pipe';
 
 @Component({
   selector: 'app-tabla-rh',
@@ -20,17 +22,24 @@ export class TablaRhComponent implements OnInit {
 
   public recursoHumano!: RecursoHumano[];
 
- 
+  edit: boolean = false;
 
+  rhId!: any; 
 
   constructor(private service: RechumanoService) { }
   ngOnInit(): void {    
     this.service.getRecurso().subscribe(resp => {
       this.recursoHumano = resp; 
+      this.rhId = this.recursoHumano[0].id;
     });
   }
+  page_size: number = 5;
+  page_number: number = 1; 
 
-  
+  handlePage(e: PageEvent){
+    this.page_size = e.pageSize;
+    this.page_number = e.pageIndex + 1;
+  }
 }
 
 export interface Personaje{

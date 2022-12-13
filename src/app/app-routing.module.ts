@@ -8,8 +8,8 @@ import { ModificarRhComponent } from './acciones/modificar-rh/modificar-rh.compo
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'registrar', component:RegistrarRhComponent},  
-  {path: 'consultar', component: ConsultarRhComponent},
-  {path: 'modificar', component: ModificarRhComponent},
+  {path: 'consultar/:id', component: ConsultarRhComponent},
+  {path: 'modificar/:id', component: ModificarRhComponent},
   {path:'**', redirectTo: '', pathMatch:'full'}
 ];
 

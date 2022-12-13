@@ -19,8 +19,9 @@ export class RechumanoService {
   createRH(recursoHumano: RecursoHumano): Observable<RecursoHumano>{
     return this.http.post<RecursoHumano>(this.RH_API, recursoHumano)
   }
-  deleteRH(){
-    
+  
+  updateRH(recursoHumano: RecursoHumano): Observable<RecursoHumano>{
+    return this.http.put<RecursoHumano>(this.RH_API, recursoHumano)
   }
   
 }

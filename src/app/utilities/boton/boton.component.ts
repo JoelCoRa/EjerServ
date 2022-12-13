@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BotonComponent implements OnInit {
 
-  @Input() disabled: boolean = false;
+  @Input() disabled: boolean = true;
   @Input() background: string = '';
   @Input() fontColor: string = 'black';
   @Input() margen: string = '2rem';

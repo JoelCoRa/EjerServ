@@ -30,6 +30,7 @@ import { PruebaService } from './services/prueba/prueba.service';
 import { EliminarRhComponent } from './acciones/eliminar-rh/eliminar-rh.component';
 import { ModificarRhComponent } from './acciones/modificar-rh/modificar-rh.component';
 import { ConfirmDialogComponent } from './utilities/confirm-dialog/confirm-dialog.component';
+import { PaginatePipe } from './pipes/paginate.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ConfirmDialogComponent } from './utilities/confirm-dialog/confirm-dialo
     CuadroDatosComponent,
     EliminarRhComponent,
     ModificarRhComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    PaginatePipe
   ],
   imports: [
     BrowserModule,

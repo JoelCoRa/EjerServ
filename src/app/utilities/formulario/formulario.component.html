@@ -36,7 +36,28 @@
                 <option value="estado" disabled selected>Estado</option>
                 <option *ngFor="let edo of estados" value="">{{ edo }}</option>
             </select> 
-        </div>      
+        </div>  
+        <div class="campo {{visible ? 'visible' : ''}}">
+                <div class="estado" value="">
+                    <h3>Estado: </h3>
+
+                    <div class="opcion">
+                        <input type="radio" id="activo" name="estado" value="activo"
+                               checked>
+                        <label for="activo">Activo</label>
+                    </div>
+
+                    <div class="opcion">
+                        <input type="radio" id="inactivo" name="estado" value="inactivo">
+                        <label for="inactivo">Inactivo</label>
+                    </div>
+
+                    <div class="opcion">
+                        <input type="radio" id="suspendido" name="estado" value="suspendido">
+                        <label for="suspendido">Suspendido</label>
+                    </div>         
+                </div>               
+            </div>    
         
          
     </div>

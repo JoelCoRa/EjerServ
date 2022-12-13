@@ -1,11 +1,10 @@
 
-
 <table>
   <tr>
     <th *ngFor="let item of campo">{{item}}</th>
   </tr>
 
-    <tr *ngFor="let elem of recursoHumano">
+    <tr *ngFor="let elem of recursoHumano | paginate:page_size:page_number">
       <td>{{elem.id}}</td>
       <td>{{elem.nombres}}</td>
       <td>{{elem.primApe}}</td>
@@ -15,12 +14,19 @@
       <td>{{elem.depto}}</td>
       <td>{{elem.estado}}</td>
       <td>
-        <img class="logoAccion" src="{{urlEditar}}" alt="editar" routerLink="./modificar">
+        <img class="logoAccion" src="{{urlEditar}}" alt="editar" routerLink="./modificar/{{elem.id}}">
         <app-eliminar-rh [ngClass]="'logoAccion'"></app-eliminar-rh>
-        <img class="logoAccion" src="{{urlConsultar}}" alt="consultar" routerLink="./consultar"> 
+        <img class="logoAccion" src="{{urlConsultar}}" alt="consultar" routerLink="./consultar/{{elem.id}}"> 
       </td>     
     </tr>  
 </table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20, 30, 50]"
+              showFirstLastButtons
+              
+              [length]="recursoHumano.length"
+              [pageSize]="page_size"
+              (page)="handlePage($event)">
+  </mat-paginator>
 
 
 <!-- <div class="mat-elevation-z8">

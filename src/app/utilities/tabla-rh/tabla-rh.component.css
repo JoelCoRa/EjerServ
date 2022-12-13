@@ -3,6 +3,7 @@
 
 table{
     width: 100%;
+    padding: 1rem;
 }
 
 tbody{
@@ -16,12 +17,14 @@ table th{
     color: aliceblue;
     text-align: center;
     background-color: rgb(121, 120, 120);
+    padding: 1rem;
 }
 tr:nth-child(odd){
     background-color: rgb(212, 212, 212);
 }
 td{
     border: 1px solid black;
+    padding: 1rem;  
 }
 .logoAccion{
     width: 2.4rem;

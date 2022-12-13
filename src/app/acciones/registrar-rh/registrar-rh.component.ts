@@ -32,6 +32,10 @@ export class RegistrarRhComponent implements OnInit {
 
   recursoHumano!: RecursoHumano[];
 
+  listo: boolean = true;
+  @Input() visible: boolean = false;
+  @Input() buscar: boolean = false;
+
   
   Guardar(recursoHumano: RecursoHumano){
     this.service.createRH(recursoHumano).subscribe( data =>{      
@@ -40,10 +44,6 @@ export class RegistrarRhComponent implements OnInit {
       this.recursoHumano.push(data);
     })
   }
-
-  
-
-  
 
   ngOnInit(): void {
   }
